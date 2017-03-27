@@ -1,0 +1,28 @@
+{%  load main_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{%MisProyectos as proyectos%}
+
+{%for p in proyectos%}
+{{p}}
+
+{%empty%}
+<p>No hay proyectos</p>
+{%endfor%}
+
+{%MisComunidades as comunidades%}
+
+{%for c in comunidades%}
+{{c}}
+
+{%empty%}
+<p>No hay comunidades</p>
+{%endfor%}
+
+</body>
+</html>
