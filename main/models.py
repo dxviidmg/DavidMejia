@@ -1,5 +1,17 @@
 from django.db import models
 
+class Grado(models.Model):
+	titulo = models.CharField(max_length=100)
+	institucion = models.CharField(max_length=100)
+	cedula = models.CharField(max_length=10)
+	año_egreso = models.CharField(max_length=20)
+
+	def __str__(self):
+		return self.titulo
+
+	class Meta:
+		ordering = ['año_egreso',]
+
 class Proyecto(models.Model):
 	nombre = models.CharField(max_length=100)
 	descripcion = models.TextField()

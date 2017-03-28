@@ -4,10 +4,13 @@ from ..models import *
 
 @register.simple_tag
 def MisProyectos():
-	proyectos = Proyecto.objects.all()
-	return proyectos
+	return Proyecto.objects.all()
 
 @register.simple_tag
 def MisComunidades():
 	comunidades = Comunidad.objects.all()
 	return comunidades
+	
+@register.simple_tag
+def MisGrados():
+	return Grado.objects.all()
