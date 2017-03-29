@@ -6,10 +6,10 @@
 <html>
 	<head>
 		<title>David Mejía</title>
-			<meta name="viewport" content="width=device-width, user-scalable=no">
-			<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
-			<link rel="stylesheet" type="text/css" href="{%static 'css/font-awesome.min.css'%}">
-			<link rel="stylesheet" type="text/css" href="{%static 'css/estilos.css'%}">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css'%}">
+		<link rel="stylesheet" type="text/css" href="{%static 'css/font-awesome.min.css'%}">
+		<link rel="stylesheet" type="text/css" href="{%static 'css/estilos.css'%}">
 	</head>
 	<body>
 		<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-inverse bg-inverse fixed-top">
@@ -49,10 +49,10 @@
 		<section class="inicio d-flex align-items-center">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12">
-					<h2 class= "text-center mensaje">
+					<div class="col-sm-12 mensaje">
+					<h2 class= "text-center x">
 					Cualquier tecnología suficientemente avanzada es equivalente a la magia</h2>
-					<p class="text-right mensaje">-Sir Arthur C. Clarke</p>
+					<p class="text-right">-Sir Arthur C. Clarke</p>
 					</div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 			<div class="container">
 				<h1>Acerca de mi</h1>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 espacio">
 						<div id="accordion" role="tablist" aria-multiselectable="true">
 							<div class="card">
 								<div class="card-header" role="tab" id="headingOne">
@@ -71,7 +71,7 @@
 								</div>
 								<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 									<div class="card-block">
-										<p>Mi nombre es David Mejia Guzman, soy originario de Actopan Hidalgo, y disfruto mucho lo que hago.</p>
+										<p>Mi nombre es David Mejía Guzmán, soy originario de Actopan Hidalgo y creo firmemente en el uso responsable de la tecnología.</p>
 									</div>
 								</div>
 							</div>
@@ -123,10 +123,36 @@
 									</div>
 								</div>
 							</div>
+
+
+
+										<div class="card">
+								<div class="card-header" role="tab" id="headingFour">
+									<h5 class="mb-0">
+									<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Intereses</a></h5>
+								</div>
+								<div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+									<div class="card-block">
+										<ul>
+
+										{%for interes in intereses%}
+
+										<li>{{interes.nombre}}</li>
+										
+										{%empty%}
+
+										<p>Lista de certificaciones vacia</p>
+
+										{%endfor%}
+										</ul>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
-					<div class="col-md-6 d-flex justify-content-center">
-						<div class="rounded-circle yo" style="height: 250px;width:250px;">
+					<div class="col-md-6 d-flex justify-content-center espacio">
+						<div class="rounded-circle yo">
 						</div>
 					</div>
 				</div>
@@ -140,7 +166,7 @@
 
 					{%for proyecto in proyectos%}
 			
-					<div class="col-sm-4">
+					<div class="col-sm-6 col-md-4 espacio">
 						<div class="card">
 							<img class="card-img-top" src="{{proyecto.imagen.url}}" alt="Imagen no disponible">
 							<div class="card-block">
@@ -170,7 +196,7 @@
 			<div class="container">
 				<h1>Publicaciones</h1>
 				<div class="row">
-					<div class="col-12">
+					<div class="col-12 espacio">
 						<div class="table-responsive"> 
 							<table class="table">
 								<thead>
@@ -209,7 +235,7 @@
 
 					{%for comunidad in comunidades%}
 
-					<div class="col-md-3">
+					<div class="col-sm-6 col-md-3 espacio">
 						<div class="flip_panel">
 							<div class="front card">
 								<img src="{{comunidad.logo.url}}" class="img-responsive img-rounded img-thumbnail"/>
@@ -236,7 +262,7 @@
 
 					{%for foto in fotos%}
 
-					<div class="col-md-4">
+					<div class="col-sm-6 col-md-3">
 						<div class="imageWrapper">
 							<img src="{{foto.imagen.url}}" class="img-fluid" alt="" />
 							<p class="cornerLink">{{foto.descripcion}}</p>
@@ -257,13 +283,13 @@
 			<div class="container">
 				<h1>Contacto</h1>
 				<div class="row justify-content-center text-center">
-					<div class="col-md-4">
+					<div class="col-sm-4 espacio-contacto">
 						<a href="https://www.facebook.com/dxviidmg"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></a>
 					</div>
-					<div class="col-md-4">
+					<div class="col-sm-4 espacio-contacto">
 						<a href="https://www.linkedin.com/in/david-mej%C3%ADa-guzm%C3%A1n-72a404b0/"><i class="fa fa-linkedin-square fa-5x" aria-hidden="true"></i></a>
 					</div>
-					<div class="col-md-4">
+					<div class="col-sm-4 espacio-contacto">
 						<a href="https://github.com/dxviidmg"><i class="fa fa-github fa-5x" aria-hidden="true"></i></a>
 					</div>
 				</div>

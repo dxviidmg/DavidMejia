@@ -11,9 +11,12 @@ h1{
 
 section {
     padding-top: 75px;
-	padding-bottom: 75px;
+	padding-bottom: 35px;
 }
 
+.espacio {
+	padding-bottom: 50px;
+}
 /*Sección de inicio*/
 .inicio {
 	background-image: url("../img/david2.png");
@@ -24,6 +27,7 @@ section {
 
 .mensaje {
 	color: white;
+	/*background-color: rgba(254, 254, 254, 0.2);*/
 }
 
 /*Sección de sobre-mi*/
@@ -37,6 +41,8 @@ section {
 }
 
 .yo {
+	height: 250px;
+	width:250px;
     background: url('../img/david1.png');
     background-size: cover;
 }
@@ -154,6 +160,9 @@ img {
 	background-color: white;
 }
 
+.espacio-contacto{
+	padding-bottom: 35px;
+}
 /*Footer*/
 footer {
 	padding-top: 10px;

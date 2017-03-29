@@ -11,8 +11,8 @@ class Home(View):
 		publicaciones = Publicacion.objects.all()
 		comunidades = Comunidad.objects.all()
 		fotos = Foto.objects.all()
+		intereses = Interes.objects.all()
 
-		print(proyectos)
 		context = {
 		'grados': grados,
 		'certificaciones': certificaciones,
@@ -20,5 +20,6 @@ class Home(View):
 		'publicaciones': publicaciones,
 		'comunidades': comunidades,
 		'fotos': fotos,
+		'intereses': intereses,
 		}
 		return render(request, template_name, context)
