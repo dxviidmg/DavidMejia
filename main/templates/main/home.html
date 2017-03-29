@@ -38,153 +38,216 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-				<h2 class= "text-center" style="color: white;">
+				<h2 class= "text-center mensaje">
 				Cualquier tecnología suficientemente avanzada es equivalente a la magia</h2>
-				<p style="color: white;" class="text-right">-Sir Arthur C. Clarke</p>
+				<p class="text-right mensaje">-Sir Arthur C. Clarke</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
+  <section class="sobre-mi">
+    <div class="container">
+    <h1>Acerca de mi</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Bio
+                </a>
+              </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+              <div class="card-block">
+                <p>Mi nombre es David Mejia Guzman, soy originario de Actopan Hidalgo, y disfruto mucho lo que hago.</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+              <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Formación escolarizada
+                </a>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="card-block">
 
-<section class="sobre-mi">
-	<div class="container">
-		<h1>Acerca de mi</h1>
-		<div class="row">
-			<div class="col-md-6">
-				<div id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="card">
-    <div class="card-header" role="tab" id="headingOne">
-      <h5 class="mb-0">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Bio
-        </a>
-      </h5>
-    </div>
-
-    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-      <div class="card-block">
-     	<p>Mi nombre es David Mejia Guzman, soy originario de Actopan Hidalgo, y disfruto mucho lo que hago.</p>
+              {%for grado in grados%}
+              
+              <h4>{{grado.titulo}}</h4>
+              <p>Escuela: {{grado.institucion}}.</p>
+              <p>Cedula Profesional: {{grado.cedula}}</p>
+              <p>Año de egreso: {{grado.año_egreso}}</p>
+              
+              {%empty%}
+              
+              <p>Lista de grados vacia</p>
+              
+              {%endfor%}
+              
+              </div>
+            </div>
+          </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Certificaciones
+                </a>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block">
+                
+                {%for certificacion in certificaciones%}
+                
+                  <h4>{{certificacion.nombre}}</h4>
+                  <p>Entidad certificadora: {{certificacion.entidad}}</p>
+                  <p>Año: {{certificacion.año}}</p>
+                
+                {%empty%}
+                
+                  <p>Lista de certificaciones vacia</p>
+                
+                {%endfor%}
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="rounded-circle yo" style="height: 250px;width:250px;">
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab" id="headingTwo">
-      <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Formación escolarizada
-        </a>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="card-block">
+  </section>
 
-        {%for grado in grados%}
-        <h5>*{{grado.titulo}}</h5>
-        <p>Escuela: {{grado.institucion}}.
-        </p>
-        <p>Cedula Profesional: {{grado.cedula}}</p>
-        <p>Año de egreso: {{grado.año_egreso}}</p>
-        {%empty%}
-        <p>Lista de grados vacia</p>
+  <section class="portafolio">
+  	<div class="container">
+  	<h1>Portafolio</h1>
+  		<div class="row justify-content-center">
+
+  		{%for p in proyectos%}
+  		
+      	<div class="col-sm-4">
+  				<div class="card">
+  					<img class="card-img-top" src="{{p.imagen.url}}" alt="Imagen no disponible">
+  					<div class="card-block">
+  						<h4 class="card-title text-center">{{p.nombre}}</h4>
+  						<p class="card-text text-justify">{{p.descripcion}}</p>
+
+  						{%if p.enlace%}
+  		
+      				<a href="http://{{p.enlace}}" class="btn btn-primary" role="button">Ir al sitio</a>
+  		
+      				{%endif%}
+  		
+      			</div>
+  					<div class="card-footer">
+  						<small class="text-muted">{{p.año}}</small>
+  					</div>
+  				</div>
+  			</div>
+
+  		{%endfor%}
+  		
+      </div>
+  	</div>
+  </section>
+
+  <section class="publicaciones">
+    <div class="container">
+      <h1>Publicaciones</h1>
+      <div class="row">
+        <div class="col-12">
+          <div class="table-responsive">          
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-center">Titulo</th>
+                  <th class="text-center">Publicado en</th>
+                  <th class="text-center">Tipo</th>
+                  <th class="text-center">Año</th>
+                </tr>
+              </thead>
+              <tbody>
+              {%for publicacion in publicaciones%}
+                <tr class="text-justify">
+                  <td>{{publicacion.titulo}}</td>
+                  <td>{{publicacion.lugar}}</td>
+                  <td class="text-center">{{publicacion.tipo}}</td>
+                  <td class="text-center">{{publicacion.año}}</td>
+                </tr>
+              {%empty%}
+                <tr>
+                  <td>Lista de publicaciones vacia</td>
+                </tr>
+              {%endfor%}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="comunidades">
+    <div class="container">
+      <h1>Comunidades</h1>
+      <div class="row justify-content-center">
+      
+        {%for comunidad in comunidades%}
+      
+        <div class="col-md-3">
+          <div class="flip_panel">
+            <div class="front card">
+              <img src="{{comunidad.logo.url}}" class="img-responsive img-rounded img-thumbnail"/>
+            </div>   
+            <div class="back card">
+              <div class="TextOnTop">
+                <p>{{comunidad.nombre}}</p>
+                <a href="{{comunidad.enlace_fb}}"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {%endfor%}
+      
       </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab" id="headingThree">
-      <h5 class="mb-0">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Certificaciones
-        </a>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="card-block">
-      	{%for certificacion in certificaciones%}
-      	<h4>{{certificacion.nombre}}</h4>
-      	<p>Entidad certificadora: {{certificacion.entidad}}</p>
-      	<p>Año: {{certificacion.año}}</p>
-      	{%empty%}
-      	<p>Lista de certificaciones vacia</p>
-      	{%endfor%}
+  </section>
+
+  <section class="galeria">
+    <div class="container">
+      <h1>Galeria</h1>
+      <div class="row">
+        
+        {%for foto in fotos%}
+        
+        <div class="col-md-4">
+         <div class="imageWrapper">
+            <img src="{{foto.imagen.url}}" class="img-fluid" alt="" />
+            <p class="cornerLink">{{foto.descripcion}}</p>
+          </div>
+        </div>
+        
+        {%empty%}
+        
+        <p>No hay fotos</p>
+        
+        {%endfor%}
+      
       </div>
     </div>
-  </div>
-</div>
-			</div>
-			<div class="col-md-6">
-				<img class="" src="static/img/perfil.jpg" style="height: 250px; width:250px;">
-			</div>
-		</div>
-	</div>
-</section>
-<section class="portafolio">
-	<div class="container">
-	<h1>Portafolio</h1>
-		<div class="row justify-content-md-center">
-		{%for p in proyectos%}
-			<div class="col-sm-4">
-				<div class="card">
-					<img class="card-img-top" src="{{p.imagen.url}}" style="width:100%" alt="Imagen no disponible">
-					<div class="card-block">
-						<h4 class="card-title">{{p.nombre}}</h4>
-						<p class="card-text">{{p.descripcion}}</p>
-
-						{%if p.enlace%}
-						<a href="http://{{p.enlace}}" class="btn btn-primary" role="button">Ir al sitio</a>
-						{%endif%}
-					</div>
-					<div class="card-footer">
-						<small class="text-muted">{{p.año}}</small>
-					</div>
-				</div>
-			</div>
-
-		{%endfor%}
-		</div>
-	</div>
-</section>
-
-<section class="publicaciones">
-	<div class="container">
-		<h1>Publicaciones</h1>
-		<div class="row">
-			<div class="col-12">
-				
-
-  <div class="table-responsive">          
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Titulo</th>
-        <th>Publicado en</th>
-        <th>Tipo</th>
-        <th>Año</th>
-      </tr>
-    </thead>
-    <tbody>
-        {%for publicacion in publicaciones%}
-      <tr>
-        <td>{{publicacion.titulo}}</td>
-        <td>{{publicacion.lugar}}</td>
-        <td>{{publicacion.tipo}}</td>
-        <td>{{publicacion.año}}</td>
-      </tr>
-      	{%empty%}
-      <tr>
-        <td><p>Lista de publicaciones vacia</p></td>
-      </tr>
-      	{%endfor%}
-    </tbody>
-  </table>
-
-
-			</div>
-		</div>
-	</div>
-</section>
-
+  </section>
 
 	<script type="text/javascript" src="{%static 'js/jquery.js'%}"></script>
 	<script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>

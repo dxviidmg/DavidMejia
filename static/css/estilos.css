@@ -1,11 +1,12 @@
-.inicio {
-	background-image: url("../img/david1.png");
-	background-size: cover;
-	height: 100vh;
-	vertical-align: 50%;
+html {
+	font-size: 17px;
 }
+
 h1{
-	color: red;
+	color: black;
+	text-align: center;
+	padding-bottom: 50px;
+	font-weight: bold;
 }
 
 section {
@@ -13,7 +14,136 @@ section {
 	padding-bottom: 75px;
 }
 
+/*Sección de inicio*/
+.inicio {
+	background-image: url("../img/david2.png");
+	background-size: cover;
+	height: 100vh;
+	vertical-align: 50%;
+}
+
+.mensaje {
+	color: white;
+}
+
+/*Sección de sobre-mi*/
+
+.sobre-mi {
+	background-color: gray;
+}
+.mb-0 > a{
+	color: black;
+	text-decoration: none
+}
+
+.yo {
+    background: url('../img/david1.png');
+    background-size: cover;
+}
+.yo:hover {
+    background: url('../img/david2.png');
+    background-size: cover;
+}
+
+/*Portafolio*/
+
 .portafolio {
+	background-color: white;
+}
+
+img {
+	width: 100%;
+}
+
+/*Publicaciones*/
+.publicaciones {
 	background-color: gray;
 }
 
+/*Comunidades*/
+.comunidades {
+	background-color: white;
+}
+
+@charset "utf-8";
+/* CSS Document */
+
+.flip_panel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    z-index: 1;
+    transform: rotateY(180deg);  
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+.flip_panel:hover .front {
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+
+.flip_panel:hover .back {
+    z-index: 2;   
+    transform: rotateX(0deg);
+}
+
+.TextOnTop {
+    text-align: center;
+    position:relative;
+    padding-top: 30%;
+
+}
+
+/*Galeria*/
+
+.galeria {
+	background-color: gray;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.imageWrapper img {
+    display: block;
+}
+.imageWrapper .cornerLink {
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 2px 0px;
+    color: #ffffff;
+    background: #000000;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+    
+}
+.imageWrapper:hover .cornerLink {
+    opacity: 0.8;
+    bottom: 0;
+}

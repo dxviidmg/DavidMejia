@@ -9,6 +9,8 @@ class Home(View):
 		certificaciones = Certificacion.objects.all()
 		proyectos = Proyecto.objects.all()
 		publicaciones = Publicacion.objects.all()
+		comunidades = Comunidad.objects.all()
+		fotos = Foto.objects.all()
 
 		print(proyectos)
 		context = {
@@ -16,5 +18,7 @@ class Home(View):
 		'certificaciones': certificaciones,
 		'proyectos': proyectos,
 		'publicaciones': publicaciones,
+		'comunidades': comunidades,
+		'fotos': fotos,
 		}
 		return render(request, template_name, context)
