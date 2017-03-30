@@ -11,7 +11,7 @@ class Home(View):
 		publicaciones = Publicacion.objects.all()
 		comunidades = Comunidad.objects.all()
 		fotos = Foto.objects.all()
-		intereses = Interes.objects.all()
+		intereses = Interes.objects.all().order_by('nombre')
 
 		context = {
 		'grados': grados,

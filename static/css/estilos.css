@@ -19,7 +19,7 @@ section {
 }
 /*Sección de inicio*/
 .inicio {
-	background-image: url("../img/david2.png");
+	background-image: url("../img/fondo.png");
 	background-size: cover;
 	height: 100vh;
 	vertical-align: 50%;
@@ -33,28 +33,31 @@ section {
 /*Sección de sobre-mi*/
 
 .sobre-mi {
-	background-color: gray;
+	background-color: white;
 }
 .mb-0 > a{
 	color: black;
 	text-decoration: none
 }
 
+.card-header{
+    background-color: #F2F2F2;
+}
 .yo {
 	height: 250px;
 	width:250px;
-    background: url('../img/david1.png');
+    background: url('../img/foto1.jpg');
     background-size: cover;
 }
 .yo:hover {
-    background: url('../img/david2.png');
+    background: url('../img/foto2.jpg');
     background-size: cover;
 }
 
 /*Portafolio*/
 
 .portafolio {
-	background-color: white;
+	background-color: #FA5858;
 }
 
 img {
@@ -63,12 +66,12 @@ img {
 
 /*Publicaciones*/
 .publicaciones {
-	background-color: gray;
+	background-color: white;
 }
 
 /*Comunidades*/
 .comunidades {
-	background-color: white;
+	background-color: #E6E6E6;
 }
 
 @charset "utf-8";
@@ -85,8 +88,14 @@ img {
     height: 100%;
     transition: all .5s;
     backface-visibility: hidden;
+    
+    
 }
 
+.front-card{
+    background-color: transparent;
+    border-color: transparent;
+}
 .front {
     z-index: 2;
 }
@@ -94,10 +103,10 @@ img {
 .back {
     z-index: 1;
     transform: rotateY(180deg);  
-
     position: absolute;
     top: 0px;
     left: 0px;
+    background-color: white;
 }
 
 
@@ -121,7 +130,7 @@ img {
 /*Galeria*/
 
 .galeria {
-	background-color: gray;
+	background-color: white;
 }
 
 .imageWrapper {
@@ -157,16 +166,25 @@ img {
 /*Contacto*/
 
 .contacto {
-	background-color: white;
+	background-color: #151515;
 }
 
 .espacio-contacto{
 	padding-bottom: 35px;
 }
+
+.fa-5x {
+    color: #F2F2F2;
+}
+
+.fa-5x:hover {
+    color: #BDBDBD;
+}
 /*Footer*/
 footer {
 	padding-top: 10px;
 	padding-bottom: 5px;
-    background-color: gray;
+    background-color: #1C1C1C;
+    color: white;
 
 }

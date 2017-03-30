@@ -71,7 +71,7 @@
 								</div>
 								<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 									<div class="card-block">
-										<p>Mi nombre es David Mejía Guzmán, soy originario de Actopan Hidalgo y creo firmemente en el uso responsable de la tecnología.</p>
+										<p>Mi nombre es David Mejía Guzmán, orgullosamente actopense, y soy DEVELOPER.</p>
 									</div>
 								</div>
 							</div>
@@ -123,10 +123,7 @@
 									</div>
 								</div>
 							</div>
-
-
-
-										<div class="card">
+							<div class="card">
 								<div class="card-header" role="tab" id="headingFour">
 									<h5 class="mb-0">
 									<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Intereses</a></h5>
@@ -161,12 +158,12 @@
 
 		<section class="portafolio">
 			<div class="container">
-				<h1>Portafolio</h1>
+				<h1 style="color: white;">Portafolio</h1>
 				<div class="row justify-content-center">
 
 					{%for proyecto in proyectos%}
 			
-					<div class="col-sm-6 col-md-4 espacio">
+					<div class="col-sm-6 col-md-4 espacio text-center">
 						<div class="card">
 							<img class="card-img-top" src="{{proyecto.imagen.url}}" alt="Imagen no disponible">
 							<div class="card-block">
@@ -175,7 +172,7 @@
 
 								{%if proyecto.enlace%}
 				
-								<a href="http://{{proyecto.enlace}}" class="btn btn-primary" role="button">Ir al sitio</a>
+								<a href="http://{{proyecto.enlace}}" class="btn btn-danger" role="button">Ir al sitio</a>
 			
 								{%endif%}
 			
@@ -208,18 +205,24 @@
 									</tr>
 								</thead>
 								<tbody>
+
 									{%for publicacion in publicaciones%}
+								
 									<tr class="text-justify">
 										<td>{{publicacion.titulo}}</td>
 										<td>{{publicacion.lugar}}</td>
 										<td class="text-center">{{publicacion.tipo}}</td>
 										<td class="text-center">{{publicacion.año}}</td>
 									</tr>
+								
 									{%empty%}
+								
 									<tr>
 										<td>Lista de publicaciones vacia</td>
 									</tr>
+								
 									{%endfor%}
+								
 								</tbody>
 							</table>
 						</div>
@@ -237,10 +240,10 @@
 
 					<div class="col-sm-6 col-md-3 espacio">
 						<div class="flip_panel">
-							<div class="front card">
-								<img src="{{comunidad.logo.url}}" class="img-responsive img-rounded img-thumbnail"/>
+							<div class="front card front-card">
+								<img src="{{comunidad.logo.url}}" class="img-thumbnail rounded-circle"/>
 							</div>   
-							<div class="back card">
+							<div class="back card img-thumbnail rounded-circle">
 								<div class="TextOnTop">
 									<p>{{comunidad.nombre}}</p>
 									<a href="{{comunidad.enlace_fb}}"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
@@ -281,7 +284,7 @@
 
 		<section class="contacto">
 			<div class="container">
-				<h1>Contacto</h1>
+				<h1 style="color: white;">Contacto</h1>
 				<div class="row justify-content-center text-center">
 					<div class="col-sm-4 espacio-contacto">
 						<a href="https://www.facebook.com/dxviidmg"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></a>
