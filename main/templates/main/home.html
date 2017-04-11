@@ -16,37 +16,37 @@
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" href="#">David Mejía</a>
+			<a class="navbar-brand" href="#inicio" id="link-inicio">David Mejía</a>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Inicio</a>
+						<a id="link-inicio2" class="nav-link" href="#inicio">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Acerca de mi</a>
+						<a id="link-sobre-mi" class="nav-link" href="#sobre-mi">Acerca de mi</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Portafolio</a>
+						<a id="link-portafolio" class="nav-link" href="#portafolio">Portafolio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Publicaciones</a>
+						<a id="link-publicaciones" class="nav-link" href="#publicaciones">Publicaciones</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Comunidades</a>
+						<a id="link-comunidades" class="nav-link" href="#comunidades">Comunidades</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Galeria</a>
+						<a id="link-galeria" class="nav-link" href="#galeria">Galeria</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Contacto</a>
+						<a id="link-contacto" class="nav-link" href="#contacto">Contacto</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 
-		<section class="inicio d-flex align-items-center">
+		<section id="inicio" class="inicio d-flex align-items-center">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 mensaje">
@@ -58,7 +58,7 @@
 			</div>
 		</section>
 
-		<section class="sobre-mi">
+		<section id="sobre-mi" class="sobre-mi">
 			<div class="container">
 				<h1>Acerca de mi</h1>
 				<div class="row">
@@ -71,7 +71,7 @@
 								</div>
 								<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 									<div class="card-block">
-										<p>Mi nombre es David Mejía Guzmán, orgullosamente actopense, y soy DEVELOPER.</p>
+										<p>Mi nombre es David Mejía Guzmán, soy originario de Actopan, Hidalgo; y creo que el futuro se contruye todos los dias y de diversas maneras.</p>
 									</div>
 								</div>
 							</div>
@@ -87,9 +87,11 @@
 										{%for grado in grados%}
 
 										<h4>{{grado.titulo}}</h4>
-										<p>Escuela: {{grado.institucion}}.</p>
-										<p>Cedula Profesional: {{grado.cedula}}</p>
-										<p>Año de egreso: {{grado.año_egreso}}</p>
+										<ul>
+										<li>Escuela: {{grado.institucion}}.</li>
+										<li>Cedula Profesional: {{grado.cedula}}</li>
+										<li>Año de egreso: {{grado.año_egreso}}</li>
+										</ul>
 
 										{%empty%}
 
@@ -111,12 +113,15 @@
 										{%for certificacion in certificaciones%}
 
 										<h4>{{certificacion.nombre}}</h4>
-										<p>Entidad certificadora: {{certificacion.entidad}}</p>
-										<p>Año: {{certificacion.año}}</p>
+										<ul>
+										<li>Entidad certificadora: {{certificacion.entidad}}</li>
+										<li>Año: {{certificacion.año}}</li>
+										</ul>
 
 										{%empty%}
 
 										<p>Lista de certificaciones vacia</p>
+										
 
 										{%endfor%}
 
@@ -156,15 +161,15 @@
 			</div>
 		</section>
 
-		<section class="portafolio">
+		<section id="portafolio" class="portafolio">
 			<div class="container">
-				<h1 style="color: white;">Portafolio</h1>
+				<h1>Portafolio</h1>
 				<div class="row justify-content-center">
 
 					{%for proyecto in proyectos%}
 			
 					<div class="col-sm-6 col-md-4 espacio text-center">
-						<div class="card">
+						<div class="card card-proyecto">
 							<img class="card-img-top" src="{{proyecto.imagen.url}}" alt="Imagen no disponible">
 							<div class="card-block">
 								<h4 class="card-title text-center">{{proyecto.nombre}}</h4>
@@ -172,7 +177,7 @@
 
 								{%if proyecto.enlace%}
 				
-								<a href="http://{{proyecto.enlace}}" class="btn btn-danger" role="button">Ir al sitio</a>
+								<a href="http://{{proyecto.enlace}}" class="btn" role="button">Ir al sitio</a>
 			
 								{%endif%}
 			
@@ -189,7 +194,7 @@
 			</div>
 		</section>
 
-		<section class="publicaciones">
+		<section id="publicaciones" class="publicaciones">
 			<div class="container">
 				<h1>Publicaciones</h1>
 				<div class="row">
@@ -231,7 +236,7 @@
 			</div>
 		</section>
 
-		<section class="comunidades">
+		<section id="comunidades" class="comunidades">
 			<div class="container">
 				<h1>Comunidades</h1>
 				<div class="row justify-content-center">
@@ -258,7 +263,7 @@
 			</div>
 		</section>
 
-		<section class="galeria">
+		<section id="galeria" class="galeria">
 			<div class="container">
 				<h1>Galeria</h1>
 				<div class="row">
@@ -282,9 +287,9 @@
 			</div>
 		</section>
 
-		<section class="contacto">
+		<section id="contacto" class="contacto">
 			<div class="container">
-				<h1 style="color: white;">Contacto</h1>
+				<h1 style="color: #fff;">Contacto</h1>
 				<div class="row justify-content-center text-center">
 					<div class="col-sm-4 espacio-contacto">
 						<a href="https://www.facebook.com/dxviidmg"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></a>
@@ -305,5 +310,6 @@
 		</footer>
 		<script type="text/javascript" src="{%static 'js/jquery.js'%}"></script>
 		<script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>
+		<script type="text/javascript" src="{%static 'js/codigo.js'%}"></script>
 	</body>
 </html>

@@ -4,6 +4,12 @@ $("#link-inicio").click(function() {
     }, 2000);
 });
 
+$("#link-inicio2").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#inicio").offset().top
+    }, 2000);
+});
+
 $("#link-sobre-mi").click(function() {
     $('html, body').animate({
         scrollTop: $("#sobre-mi").offset().top
