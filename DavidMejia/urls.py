@@ -23,12 +23,12 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-     
+    url(r'^', include(mainUrls, namespace="main")),     
     url(
         regex=r'^media/(?P<path>.*)$',
         view=serve,
         kwargs ={'document_root':settings.MEDIA_ROOT}
     ),    
 
-    url(r'^', include(mainUrls, namespace="main")),
+
 ]
