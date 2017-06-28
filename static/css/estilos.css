@@ -29,7 +29,7 @@ section {
 }
 /*Sección de inicio*/
 .inicio {
-	background-image: url("../img/fondo.png");
+	background-image: url('fondo.png');
 	background-size: cover;
 	height: 100vh;
 	vertical-align: 50%;
