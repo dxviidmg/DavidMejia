@@ -1,8 +1,4 @@
 /*General*/
-html {
-	font-size: 17px;
-}
-
 h1{
 	color: black;
 	text-align: center;
@@ -53,13 +49,9 @@ section {
     background-color: #F2F2F2;
 }
 .yo {
-	height: 250px;
-	width:250px;
-    background: url('../img/foto1.jpg');
-    background-size: cover;
-}
-.yo:hover {
-    background: url('../img/foto2.jpg');
+    height: 250px;
+    width:250px;
+    background: url('../img/f1.jpg');
     background-size: cover;
 }
 
