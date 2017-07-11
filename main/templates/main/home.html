@@ -175,7 +175,7 @@
 
 								{%if proyecto.enlace%}
 				
-								<a href="http://{{proyecto.enlace}}" class="btn" role="button">Ir al sitio</a>
+								<a href="{{proyecto.enlace}}" class="btn" role="button">Ir al sitio</a>
 			
 								{%endif%}
 			
@@ -205,6 +205,7 @@
 										<th class="text-center">Publicado en</th>
 										<th class="text-center">Tipo</th>
 										<th class="text-center">Año</th>
+										<th class="text-center">Enlace</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -216,6 +217,12 @@
 										<td>{{publicacion.lugar}}</td>
 										<td class="text-center">{{publicacion.tipo}}</td>
 										<td class="text-center">{{publicacion.año}}</td>
+										<td class="text-center">
+
+										{%if publicacion.enlace%}
+											<a href="{{publicacion.enlace}}">Ver</a>
+			
+								{%endif%}</td>
 									</tr>
 								
 									{%empty%}
@@ -241,7 +248,7 @@
 
 					{%for comunidad in comunidades%}
 
-					<div class="col-sm-6 col-md-3 espacio">
+					<div class="col-sm-6 col-md-4 col-lg-3 espacio">
 						<div class="flip_panel">
 							<div class="front card front-card">
 								<img src="{{comunidad.logo.url}}" class="img-thumbnail rounded-circle"/>
@@ -268,7 +275,7 @@
 
 					{%for foto in fotos%}
 
-					<div class="col-sm-6 col-md-3">
+					<div class="col-sm-6 col-md-4 col-lg-3">
 						<div class="imageWrapper">
 							<img src="{{foto.imagen.url}}" class="img-fluid" alt="" />
 							<p class="cornerLink">{{foto.descripcion}}</p>
@@ -289,32 +296,51 @@
 			<div class="container">
 				<h1 style="color: #fff;">Contacto</h1>
 				<div class="row justify-content-center text-center">
-					<div class="col-sm-4 espacio-contacto">
-						<a href="https://www.facebook.com/dxviidmg"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></a>
+					<div class="col-sm-3 espacio-contacto">
+						 <a href="https://www.facebook.com/dxviidmg" title="Ir al sitio" data-toggle="popover" data-trigger="hover" data-content="Some content"><i class="fa fa-facebook-official fa-5x" aria-hidden="true"></i></a>
 					</div>
-					<div class="col-sm-4 espacio-contacto">
-						<a href="https://www.linkedin.com/in/david-mej%C3%ADa-guzm%C3%A1n-72a404b0/"><i class="fa fa-linkedin-square fa-5x" aria-hidden="true"></i></a>
+					<div class="col-sm-3 espacio-contacto">
+						<a href="https://www.linkedin.com/in/david-mej%C3%ADa-guzm%C3%A1n-72a404b0/" title="Ir al sitio" data-toggle="popover" data-trigger="hover" data-content="Some content"><i class="fa fa-linkedin-square fa-5x" aria-hidden="true"></i></a>
 					</div>
-					<div class="col-sm-4 espacio-contacto">
-						<a href="https://github.com/dxviidmg"><i class="fa fa-github fa-5x" aria-hidden="true"></i></a>
+					<div class="col-sm-3 espacio-contacto">
+						<a href="https://github.com/dxviidmg" title="Ir al sitio" data-toggle="popover" data-trigger="hover" data-content="Some content"><i class="fa fa-github fa-5x" aria-hidden="true"></i></a>
 					</div>
+					<div class="col-sm-3 espacio-contacto">
+						<i title="Copiar correo electrónico" data-toggle="popover" data-trigger="hover" data-content="Some content" class="fa fa-envelope fa-5x" aria-hidden="true" onclick="copyToClipboard('#p1')"></i>
+					</div>
+					<div id="p1" class="invisible">davidmejia.05@hotmail.com</div>
 				</div>
-
-				<div class="row justify-content-center text-center">
-					<div class="col-12 espacio-contacto" style="color: white;">
-					<p>e-mail: davidmejia.05@hotmail.com</p>
-					</div>
-				</div>
-
 			</div>
 		</section>
 		<footer>
-			<div class="container text-center">
-				© David Mejia. All Rights Reserved 2017.
+
+
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-12">
+						© David Mejía. All Rights Reserved 2017.
+					</div>
+				</div>
 			</div>
 		</footer>
+
 		<script type="text/javascript" src="{%static 'js/jquery.js'%}"></script>
 		<script type="text/javascript" src="{%static 'js/bootstrap.min.js'%}"></script>
 		<script type="text/javascript" src="{%static 'js/codigo.js'%}"></script>
+		<script type="text/javascript">
+		function copyToClipboard(element) {
+			var $temp = $("<input>");
+			$("body").append($temp);
+			$temp.val($(element).text()).select();
+			document.execCommand("copy");
+			$temp.remove();
+			}
+
+		$(document).ready(function(){
+			$('[data-toggle="popover"]').popover();   
+		});
+
+		</script>
+
 	</body>
 </html>

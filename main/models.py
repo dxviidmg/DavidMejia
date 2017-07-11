@@ -58,6 +58,7 @@ class Publicacion(models.Model):
 	lugar = models.TextField()
 	tipo = models.CharField(max_length=30, choices=Tipo_choices)
 	año = models.CharField(max_length=4)
+	enlace = models.TextField(null=True, blank=True)
 
 	def __str__(self):
 		return self.titulo
