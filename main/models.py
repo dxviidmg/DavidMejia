@@ -22,6 +22,7 @@ class Certificacion(models.Model):
 
 	class Meta:
 		ordering = ['año', 'nombre']
+		verbose_name_plural = "Certificaciones"
 			
 class Proyecto(models.Model):
 	nombre = models.CharField(max_length=100)
@@ -46,6 +47,7 @@ class Comunidad(models.Model):
 
 	class meta:
 		ordering = ['nombre']
+		verbose_name_plural = "Comunidades"
 
 class Publicacion(models.Model):
 	
@@ -65,6 +67,7 @@ class Publicacion(models.Model):
 
 	class meta:
 		ordering = ['año', 'titulo']
+		verbose_name_plural = "Publicaciones"
 
 class Foto(models.Model):
 	imagen = models.ImageField(upload_to="fotos/%Y/%m/%d/")
@@ -85,3 +88,4 @@ class Interes(models.Model):
 
 	class meta:
 		ordering = ['nombre']
+		verbose_name_plural = "Intereses"
