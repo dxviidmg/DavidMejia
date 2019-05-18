@@ -42,12 +42,12 @@ class Comunidad(models.Model):
 	logo = models.ImageField(upload_to="comunidades/%Y/%m/%d/")
 	enlace_fb = models.CharField(max_length=200)
 
+	class Meta:
+		ordering = ['nombre']
+		verbose_name_plural = 'Comunidades'
+
 	def __str__(self):
 		return self.nombre
-
-	class meta:
-		ordering = ['nombre']
-		verbose_name_plural = "Comunidades"
 
 class Publicacion(models.Model):
 	
@@ -65,7 +65,7 @@ class Publicacion(models.Model):
 	def __str__(self):
 		return self.titulo
 
-	class meta:
+	class Meta:
 		ordering = ['año', 'titulo']
 		verbose_name_plural = "Publicaciones"
 
@@ -86,6 +86,6 @@ class Interes(models.Model):
 	def __str__(self):
 		return self.nombre
 
-	class meta:
+	class Meta:
 		ordering = ['nombre']
 		verbose_name_plural = "Intereses"
