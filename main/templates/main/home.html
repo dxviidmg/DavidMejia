@@ -69,7 +69,7 @@
 								</div>
 								<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
 									<div class="card-block">
-										<p>Mi nombre es David Mejía Guzmán, soy originario de Actopan, Hidalgo y creo que el futuro se construye todos los días de diversas maneras.</p>
+										<p>Mi nombre es David Mejía; Profesionalmente me dedico al desarrollo web desde 2016 y por interés personal a temas relacionados a la ciencia de datos.</p>
 									</div>
 								</div>
 							</div>
@@ -103,7 +103,7 @@
 							<div class="card">
 								<div class="card-header" role="tab" id="headingThree">
 									<h5 class="mb-0">
-									<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Certificaciones</a></h5>
+									<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Certificaciones y cursos</a></h5>
 								</div>
 								<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
 									<div class="card-block">
@@ -113,7 +113,14 @@
 										<h4>{{certificacion.nombre}}</h4>
 										<ul>
 										<li>Entidad certificadora: {{certificacion.entidad}}</li>
-										<li>Año: {{certificacion.año}}</li>
+
+										{%if certificacion.año_fin_vigencia%}
+										<li>Vigencia: {{certificacion.año_inicio_vigencia}} - {{certificacion.año_fin_vigencia}}</li>
+										{%else%}
+
+										<li>Año: {{certificacion.año_inicio_vigencia}} </li>
+
+										{%endif%}
 										</ul>
 
 										{%empty%}

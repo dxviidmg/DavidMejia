@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class CertificacionAdmin(admin.ModelAdmin):
-	list_display = ['nombre', 'entidad', "año"]
+	list_display = ['nombre', 'entidad', "año_inicio_vigencia"]
 
 class FotoAdmin(admin.ModelAdmin):
 	list_display = ['descripcion', 'fecha']

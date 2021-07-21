@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Grado(models.Model):
 	titulo = models.CharField(max_length=100)
 	institucion = models.CharField(max_length=100)
@@ -12,18 +13,28 @@ class Grado(models.Model):
 	class Meta:
 		ordering = ['año_egreso',]
 
+
 class Certificacion(models.Model):
+	tipo_choices = (
+		("Curso", "Curso"),
+		("Certificación", "Certificación"),
+		("Diplomado", "Diplomado")
+	)
+
 	nombre = models.CharField(max_length=100)
 	entidad = models.CharField(max_length=100)
-	año = models.CharField(max_length=4)
+	año_inicio_vigencia = models.CharField(max_length=4)
+	año_fin_vigencia = models.CharField(max_length=4, blank=True, null=True)
+	tipo = models.CharField(max_length=30, choices=tipo_choices, default='Curso')
 
 	def __str__(self):
 		return self.nombre
 
 	class Meta:
-		ordering = ['año', 'nombre']
+		ordering = ['año_inicio_vigencia', 'nombre']
 		verbose_name_plural = "Certificaciones"
-			
+
+
 class Proyecto(models.Model):
 	nombre = models.CharField(max_length=100)
 	descripcion = models.TextField()
@@ -37,6 +48,7 @@ class Proyecto(models.Model):
 	class Meta:
 		ordering = ['año', 'nombre']
 
+
 class Comunidad(models.Model):
 	nombre = models.CharField(max_length=30)
 	logo = models.ImageField(upload_to="comunidades/%Y/%m/%d/")
@@ -49,16 +61,15 @@ class Comunidad(models.Model):
 	def __str__(self):
 		return self.nombre
 
-class Publicacion(models.Model):
-	
-	Tipo_choices = (
+class Publicacion(models.Model):	
+	tipo_choices = (
 		("Publicación científica", "Publicación Científica"),
 		("Blog", "Blog"),
 	)
 	
 	titulo = models.CharField(max_length=200)
 	lugar = models.TextField()
-	tipo = models.CharField(max_length=30, choices=Tipo_choices)
+	tipo = models.CharField(max_length=30, choices=tipo_choices)
 	año = models.CharField(max_length=4)
 	enlace = models.TextField(null=True, blank=True)
 
@@ -68,6 +79,7 @@ class Publicacion(models.Model):
 	class Meta:
 		ordering = ['año', 'titulo']
 		verbose_name_plural = "Publicaciones"
+
 
 class Foto(models.Model):
 	imagen = models.ImageField(upload_to="fotos/%Y/%m/%d/")
@@ -79,6 +91,7 @@ class Foto(models.Model):
 
 	class meta:
 		ordering = ['fecha']
+
 
 class Interes(models.Model):
 	nombre = models.CharField(max_length=50)

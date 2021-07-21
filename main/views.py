@@ -6,7 +6,7 @@ class Home(View):
 	def get(self, request):
 		template_name = "main/home.html"
 		grados = Grado.objects.all().order_by('año_egreso')
-		certificaciones = Certificacion.objects.all().order_by('año', 'nombre', 'entidad')
+		certificaciones = Certificacion.objects.all().order_by('año_inicio_vigencia', 'nombre', 'entidad')
 		proyectos = Proyecto.objects.all().order_by('año', 'nombre')
 		publicaciones = Publicacion.objects.all().order_by('año', 'titulo')
 		comunidades = Comunidad.objects.all().order_by('nombre')
